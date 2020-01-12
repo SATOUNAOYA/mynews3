@@ -89,3 +89,5 @@
                             @endguest
                             {{-- 以上までを追記 --}}
                         </ul>
+                        {{-- Laravel標準で用意されているCSSを読み込みます --}}
+<link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">

@@ -10,16 +10,27 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
-});
-Route::group(['prefix' => 'admin'], function() {
+
+Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('profile/create','Admin\ProfileController@add')->middleware('auth');
+    Route::post('profile/create', 'Admin\ProfileController@create');
+    
 });
 Route::group(['prefix' => 'admin'], function(){
     Route::get('profile/edit','Admin\ProfileController@edit')->middleware('auth');
+    Route::post('profile/edit', 'Admin\NewsController@update');
+    
 });
+
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+     Route::get('news/create', 'Admin\NewsController@add');
+     Route::post('news/create', 'Admin\NewsController@create'); # 追記
+});
+
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
