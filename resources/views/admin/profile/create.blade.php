@@ -16,18 +16,21 @@
                             @endforeach
                         </ul>
                     @endif
-                    <div class="form-group row">
-                        <label class="col-md-2">氏名・性別・趣味</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
-                        </div>
-                    </div>
-                   
+                    <body>
+<form action="#" method="post">
+	<p>お名前（必須）：<br>
+	<input type="text" name="name"></p>
+	<p>性別：<br>
+	<input type="text" name="gender"></p>
+    <p>趣味</p>
+    <input type="text" name="hobby"/>
+</form>
+</body>
                     
                     <div class="form-group row">
                         <label class="col-md-2">自己紹介</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="introduction" rows="20">{{ old('body') }}</textarea>
                         </div>
                     </div>
                     
