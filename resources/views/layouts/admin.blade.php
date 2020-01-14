@@ -25,6 +25,8 @@
         <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
         {{-- 次の1行を追記 --}}
         <link href="{{ secure_asset('css/profile.css') }}" rel="stylesheet">
+      {{-- Laravel標準で用意されているCSSを読み込みます --}}
+　　　　<link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">

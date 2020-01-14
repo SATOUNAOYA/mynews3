@@ -2,7 +2,15 @@
 @extends('layouts.admin')
 @section('title', '自己紹介')
 
+                        
 @section('content')
+@if (count($errors) > 0)
+                        <ul>
+                            @foreach($errors->all() as $e)
+                                <li>{{ $e }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
