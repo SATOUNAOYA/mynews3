@@ -50,7 +50,7 @@ public function add()
   public function update(Request $request)
   {
       // Validationをかける
-      $this->validate($request, News::$rules);
+      $this->validate($request, Profile::$rules);
       // News Modelからデータを取得する
       $profiles = Profile::find($request->id);
       // 送信されてきたフォームデータを格納する
