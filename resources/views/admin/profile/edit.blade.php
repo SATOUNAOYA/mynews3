@@ -1,5 +1,5 @@
 {{-- layouts/profile.blade.phpを読み込む --}}
-@extends('layouts.admin')
+@extends('layouts.profile')
 @section('title', '自己紹介')
 
                         
@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>自己紹介</h2>
-                <form action="{{ action('Admin\ProfileController@update) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ action('Admin\ProfileController@update') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
                         <ul>

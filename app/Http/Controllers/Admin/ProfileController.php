@@ -49,9 +49,9 @@ public function add()
 
   public function update(Request $request)
   {
-      // Validationをかける
+        // Validationをかける
       $this->validate($request, Profile::$rules);
-      // News Modelからデータを取得する
+      // Profile Modelからデータを取得する
       $profiles = Profile::find($request->id);
       // 送信されてきたフォームデータを格納する
       $profiles_form = $request->all();
@@ -59,9 +59,8 @@ public function add()
 
       // 該当するデータを上書きして保存する
       $profiles->fill($profiles_form)->save();
-
-      return redirect('admin/profile');
-  }
+        return redirect('admin/profile/');
+    }
 
 public function index(Request $request)
     {
