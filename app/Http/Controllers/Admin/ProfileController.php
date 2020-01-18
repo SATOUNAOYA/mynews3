@@ -72,4 +72,11 @@ public function index(Request $request)
         }
         return view('admin.profile.index', ['posts' => $posts, 'cond_name' => $cond_name]);
     }
+public function delete(Request $request)
+    {
+        $profiles = Profile::find($request->id);
+        
+        $profiles->delete();
+        return redirect('admin/profile/');
+    }
 }
