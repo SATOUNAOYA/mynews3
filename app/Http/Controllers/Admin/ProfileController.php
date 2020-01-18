@@ -14,7 +14,7 @@ class ProfileController extends Controller
       
       // Varidationを行う
       $this->validate($request, Profile::$rules);
-      
+      $profiles = new Profile;
       $form = $request->all();
       // フォームから送信されてきた_tokenを削除する
       unset($form['_token']);
@@ -23,8 +23,8 @@ class ProfileController extends Controller
 
       // データベースに保存する
       
-      $profile->fill($form);
-      $profile->save();
+      $profiles->fill($form);
+      $profiles->save();
 
       return redirect('admin/profile/create');
   } 
@@ -36,16 +36,41 @@ public function add()
 
     
 
-    public function edit()
+    public function edit(Request $request)
+  {
+      // News Modelからデータを取得する
+      $profiles = Profile::find($request->id);
+      if (empty($profiles)) {
+        abort(404);    
+      }
+      return view('admin.profile.edit', ['profile_form' => $profiles]);
+  }
+
+
+  public function update(Request $request)
+  {
+      // Validationをかける
+      $this->validate($request, News::$rules);
+      // News Modelからデータを取得する
+      $profiles = Profile::find($request->id);
+      // 送信されてきたフォームデータを格納する
+      $profiles_form = $request->all();
+      unset($profiles_form['_token']);
+
+      // 該当するデータを上書きして保存する
+      $profiles->fill($profiles_form)->save();
+
+      return redirect('admin/profile');
+  }
+
+public function index(Request $request)
     {
-        return view('admin.profile.edit');
+        $cond_name = $request->cond_name;
+        if($cond_name != ''){
+            $posts = Profile::where('name', $cond_name)->get();
+        }else{
+            $posts = Profile::all();
+        }
+        return view('admin.profile.index', ['posts' => $posts, 'cond_name' => $cond_name]);
     }
-
-    public function update()
-    {
-        return redirect('admin/profile/edit');
-    }
-
-    
-
 }
