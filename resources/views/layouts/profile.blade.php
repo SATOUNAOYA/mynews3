@@ -25,6 +25,8 @@
         <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
         {{-- 次の1行を追記 --}}
         <link href="{{ secure_asset('css/profile.css') }}" rel="stylesheet">
+      {{-- Laravel標準で用意されているCSSを読み込みます --}}
+　　　　<link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
@@ -59,7 +61,7 @@
         </div>
     </body>
 </html>
- <!-- Right Side Of Navbar -->
+<!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
 
                         {{-- 以下を追記 --}}
@@ -89,3 +91,5 @@
                             @endguest
                             {{-- 以上までを追記 --}}
                         </ul>
+                        {{-- Laravel標準で用意されているCSSを読み込みます --}}
+<link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">

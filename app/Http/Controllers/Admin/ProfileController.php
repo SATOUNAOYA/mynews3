@@ -43,7 +43,7 @@ public function add()
       if (empty($profiles)) {
         abort(404);    
       }
-      return view('admin.profile.edit', ['profile_form' => $profiles]);
+      return view('admin.profile.edit', ['profiles_form' => $profiles]);
   }
 
 
@@ -59,7 +59,7 @@ public function add()
 
       // 該当するデータを上書きして保存する
       $profiles->fill($profiles_form)->save();
-        return redirect('admin/profile/');
+        return redirect('admin/profile/edit');
     }
 
 public function index(Request $request)
@@ -77,6 +77,6 @@ public function delete(Request $request)
         $profiles = Profile::find($request->id);
         
         $profiles->delete();
-        return redirect('admin/profile/');
+        return redirect('admin/profile/edit');
     }
 }
