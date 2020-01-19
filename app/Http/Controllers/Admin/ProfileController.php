@@ -41,7 +41,7 @@ public function add()
       // News Modelからデータを取得する
       $profiles = Profile::find($request->id);
       if (empty($profiles)) {
-        abort(404);    
+        //abort(404);    
       }
       return view('admin.profile.edit', ['profiles_form' => $profiles]);
   }

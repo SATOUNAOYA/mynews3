@@ -56,10 +56,8 @@
                         </div>
                     </div>
                 </form>
-            </div>
-        </div>
-    </div>
-@endsection
+                
+@endsection@endsection
 
 
                    
