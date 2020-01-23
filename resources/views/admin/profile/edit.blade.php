@@ -63,7 +63,7 @@
                         <h2>更新履歴</h2>
                         <ul class="list-group">
                             @if ($profiles_form->profileHistories != NULL)
-                                @foreach ($profiles_form->profileHistories as $profile_history)
+                                @foreach ($profiles_form->profilehistories as $profile_history)
                                     <li class="list-group-item">{{ $profile_history->edited_at }}</li>
                                 @endforeach
                             @endif

@@ -65,7 +65,7 @@ public function add()
         return redirect('admin/profile/edit');
     
         
-        $profile_history = new Profilehistory;
+        $profile_history = new ProfileHistory;
         $profile_history->profile_id = $profile->id;
         $profile_history->edited_at = Carbon::now();
         $profile_history->save();
