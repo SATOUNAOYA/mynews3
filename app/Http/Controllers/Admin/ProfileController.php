@@ -62,15 +62,13 @@ public function add()
 
       // 該当するデータを上書きして保存する
       $profiles->fill($profiles_form)->save();
-        return redirect('admin/profile/edit');
-    
+      
         
         $profile_history = new ProfileHistory;
         $profile_history->profile_id = $profile->id;
         $profile_history->edited_at = Carbon::now();
         $profile_history->save();
-
-        return redirect('admin/profile/');
+        return redirect('/admin/profile/edit', ['id'=>$profiles_form->id]);
     }
 
 public function index(Request $request)

@@ -27,7 +27,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">氏名</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="name" value="{{  $profiles_form->name}}">
+                           <input type="text" class="form-control" name="name" value="{{  $profiles_form->name }}">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -62,7 +62,7 @@
                     <div class="col-md-4 mx-auto">
                         <h2>更新履歴</h2>
                         <ul class="list-group">
-                            @if ($profiles_form->profileHistories != NULL)
+                            @if ($profiles_form->profilehistories != NULL)
                                 @foreach ($profiles_form->profilehistories as $profile_history)
                                     <li class="list-group-item">{{ $profile_history->edited_at }}</li>
                                 @endforeach
