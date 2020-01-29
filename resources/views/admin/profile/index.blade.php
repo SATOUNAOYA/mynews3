@@ -47,6 +47,8 @@
                                     <td>{{ str_limit($profiles->gender, 100) }}</td>
                                     <td>{{ str_limit($profiles->hobby, 100) }}</td>
                                     <td>{{ str_limit($profiles->introduction, 100) }}</td>
+                                    <td>{{ str_limit($profiles->title, 100) }}</td>
+                                    <td>{{ str_limit($profiles->body, 250) }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\ProfileController@edit', ['id' => $profiles->id]) }}">編集</a>
